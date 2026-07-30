@@ -1,0 +1,381 @@
+/* =======================
+   BASE STYLES & RESET 
+======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Clean body font */
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6; 
+    color: #444; 
+    overflow-x: hidden;
+}
+
+/* Eye-catching heading font */
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: #0b2046; /* Navy Blue */
+}
+
+/* =======================
+   HEADER & NAVIGATION 
+======================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 5%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #f39c12; /* Warm vibrant orange */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00b894; /* Emerald Green */
+}
+
+.btn-donate {
+    background-color: #f39c12;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+}
+
+.btn-donate:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+/* =======================
+   HORIZONTAL HERO SLIDER 
+======================== */
+.slider-container {
+    position: relative;
+    height: 85vh; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.slider-track {
+    display: flex;
+    width: 300%; 
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: slideHorizontal 15s infinite ease-in-out;
+}
+
+.slide {
+    width: 33.3333%; 
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); 
+}
+
+/* Ensure these images exist inside your 'images' folder */
+.slide-1 { background-image: url('images/hero-bg.jpg'); }
+.slide-2 { background-image: url('images/prakriti.jpg'); }
+.slide-3 { background-image: url('images/seva.jpg'); }
+
+@keyframes slideHorizontal {
+    0%, 25% { transform: translateX(0); }                  
+    33%, 58% { transform: translateX(-33.3333%); }         
+    66%, 91% { transform: translateX(-66.6666%); }         
+    100% { transform: translateX(0); }                     
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    animation: fadeUp 1.5s ease-out;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    color: #ffffff;
+    font-size: 55px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.6); 
+}
+
+.hero-content p {
+    font-size: 20px;
+    max-width: 750px;
+    margin: 0 auto 35px auto;
+    line-height: 1.7;
+    font-weight: 600;
+    text-shadow: 1px 2px 5px rgba(0,0,0,0.8);
+    color: #ffffff;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #00b894; 
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #009376;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 184, 148, 0.6);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   ABOUT US SPLIT SECTION 
+======================== */
+.about-split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 90px 5%;
+    background-color: #ffffff;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #f39c12;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+}
+
+.about-text h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.about-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* =======================
+   PROJECTS SECTION 
+======================== */
+.projects-section {
+    padding: 90px 5%;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 290px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    text-align: left;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+.card-content {
+    padding: 25px;
+    position: relative;
+    background: white;
+    z-index: 2;
+}
+
+.card-content h3 {
+    color: #0b2046; 
+    margin-bottom: 12px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =======================
+   IMPACT BANNER 
+======================== */
+.impact-banner {
+    background-color: #0b2046; 
+    color: white;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.impact-banner h2 {
+    font-size: 38px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.impact-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.stat-box h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #00b894; 
+    text-shadow: 0px 4px 10px rgba(0, 184, 148, 0.3);
+}
+
+.stat-box p {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #e0e0e0;
+}
+
+/* =======================
+   FOOTER 
+======================== */
+footer {
+    background-color: #1a1a1a; 
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    padding: 70px 20px;
+}
+
+.footer-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-content p {
+    margin-bottom: 35px;
+    color: #b2bec3;
+    font-size: 18px;
+}
+
+.footer-bottom {
+    background-color: #111111;
+    padding: 25px;
+    font-size: 14px;
+    color: #636e72;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
